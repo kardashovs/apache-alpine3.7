@@ -9,7 +9,7 @@ The container also have a backup system with cron schedule, number of copies to 
 
 #### starting the container as a daemon
 
-	docker run -d --name apache nimmis/alpine-apache
+	docker run -d --name apache krosh961/apache-alpine3.7
 
 This will start the container with apache process running, to access the container use
 
@@ -29,7 +29,7 @@ The images exposes a volume at /web. The structure is
 
 To use this start the container with
 
-	docker run -d --name -apache -v /path/to/web:/web nimmis/alpine-apache
+	docker run -d --name -apache -v /path/to/web:/web krosh961/apache-alpine3.7
 
 if the folders are missing they will be created each time the container is started.
 
@@ -43,11 +43,11 @@ or use the **-p** command to assign other ports, the syntax is
 
 so to access the apache server port 80 on port 8080 you should use the command
 
-	docker run -d --name apache -p 8080:80 nimmis/alpine-apache
+	docker run -d --name apache -p 8080:80 krosh961/apache-alpine3.7
 
 or assigning 80->80 and 443->443 use
 
-	docker run -d --name apache -p 80:80 -p 443:443 nimmis/alpine-apache
+	docker run -d --name apache -p 80:80 -p 443:443 krosh961/apache-alpine3.7
 
 #### Successsful setup
 

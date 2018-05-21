@@ -2,11 +2,18 @@ FROM krosh961/alpine
 
 MAINTAINER Sergey Kardashov <krosh961@yandex.ru>
 
+
+LABEL org.label-schema.name="apache-alpine3.7" \
+      org.label-schema.description="This is a micro docker container based on Alpine 3.7, Apache 2.4" \
+      org.label-schema.url="https://hub.docker.com/r/krosh961/apache-alpine3.7/" \
+      org.label-schema.vcs-url="https://github.com/krosh961/apache-alpine3.7" 
+
+
 COPY root/. /
 
 RUN apk update && apk upgrade && \
     # Make info file about this build
-    printf "Build of krosh961/alpine, date: %s\n"  `date -u +"%Y-%m-%dT%H:%M:%SZ"` >> /etc/BUILD && \
+    printf "Build of krosh961/apache-alpine3.7, date: %s\n"  `date -u +"%Y-%m-%dT%H:%M:%SZ"` >> /etc/BUILD && \
     apk add apache2 libxml2-dev apache2-utils && \
     mkdir /web/ && chown -R apache.www-data /web && \
     sed -i 's#^DocumentRoot ".*#DocumentRoot "/web/html"#g' /etc/apache2/httpd.conf && \
