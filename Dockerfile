@@ -1,4 +1,4 @@
-FROM krosh961/alpine
+FROM krosh961/alpine3.7-docker
 
 MAINTAINER Sergey Kardashov <krosh961@yandex.ru>
 
