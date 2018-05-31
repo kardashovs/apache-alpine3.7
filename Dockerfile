@@ -28,8 +28,6 @@ RUN apk update && apk upgrade && \
     sed -i 's/Options Indexes/Options /g' /etc/apache2/httpd.conf && \
     sed -i '/LoadModule rewrite_module/s/^#//g' /etc/apache2/httpd.conf && \
     rm -rf /var/cache/apk/*
-    
-VOLUME /web
 
 EXPOSE 80 443
 
